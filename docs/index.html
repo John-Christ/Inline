@@ -7,27 +7,43 @@
         <title>BOYO QUIZ</title>
         
           <script src="https://js.yoco.com/sdk/v1/yoco-sdk-web.js"></script>
-            <script>
+                                                                  
+       
+        
+        </head>
+        
+        
+        <body>
+        
+         <form id="payment-form" method="POST">
+  <div class="one-liner">
+    <div id="card-frame">
+                        
+                          <script>
   // Replace the supplied `publicKey` with your own.
   // Ensure that in production you use a production public_key.
   var sdk = new window.YocoSDK({
-    publicKey: 'pk_live_c441f26bAVy62Mr88a94'
+    publicKey: 'pk_test_ed3c54a6gOol69qa7f45'
   });
 
   // Create a new dropin form instance
   var inline = sdk.inline({
     layout: 'field',
-    amountInCents: 500,
+    amountInCents: 2499,
     currency: 'ZAR'
   });
   // this ID matches the id of the element we created earlier.
   inline.mount('#card-frame');
-</script>
-      
-      
-                                                                  
-                                                                  
-<script>
+</script>             
+      <!-- Yoco Inline form will be added here -->
+    </div>
+    <button id="pay-button">
+      PAY ZAR 24.99
+    </button>
+  </div>
+  <p class="success-payment-message" />
+                                    
+    <script>
   // Run our code when your form is submitted
   var form = document.getElementById('payment-form');
   var submitButton = document.getElementById('pay-button');
@@ -54,47 +70,12 @@
     });
   });
   // Any additional form data you want to submit to your backend should be done here, or in another event listener
-</script>
-        
-        </head>
-        
-        
-        <body>
-        
-        <form id="payment-form" method="POST">
-  <div class="one-liner">
-    <div id="card-frame">
-
-      <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-            <br>                                                                         
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <br>
-                                                                                             
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-            
-                            
-                            
-              <br>
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
-              
-             <br>
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
-                                                                                                                                   
-          
-                                                                                             
-                                                                                                                 
-     </div>
-    <button id="pay-button">
-      PAY ZAR 5.00
-    </button>
-  </div>
-  <p class="success-payment-message" />
+</script>  
+                                    
 </form>
+                                    
+                                    
+      
         
         
         </body>
